@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <title>Place de Stationnement</title>
+    <link rel="stylesheet" href="assets/css/park.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+   
+  </head>
+  <body>
+    <div class="phone">
+      <div class="notch"></div>
+
+      <div class="statusbar">
+        <span>07:30 AM</span>
+        <div class="statusbar-right">
+          <svg
+            width="16"
+            height="12"
+            viewBox="0 0 16 12"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path d="M8 3C10.5 3 12.7 4.1 14.2 5.9" />
+            <path d="M1.8 5.9C3.3 4.1 5.5 3 8 3" />
+            <path d="M5.5 7.5C6.3 6.6 7.1 6 8 6C8.9 6 9.7 6.6 10.5 7.5" />
+            <circle cx="8" cy="10" r="1" fill="currentColor" />
+          </svg>
+          <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor">
+            <rect x="0" y="3" width="3" height="9" rx="1" />
+            <rect x="4.5" y="2" width="3" height="10" rx="1" />
+            <rect x="9" y="0" width="3" height="12" rx="1" />
+            <rect x="13.5" y="0" width="3" height="12" rx="1" opacity=".3" />
+          </svg>
+          <svg width="25" height="12" viewBox="0 0 25 12" fill="currentColor">
+            <rect
+              x="0"
+              y="1"
+              width="22"
+              height="10"
+              rx="3"
+              stroke="currentColor"
+              stroke-width="1"
+              fill="none"
+            />
+            <rect x="1.5" y="2.5" width="17" height="7" rx="2" />
+            <rect x="22.5" y="4" width="2" height="4" rx="1" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="header">
+        <div class="back-btn">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M19 12H5M12 5l-7 7 7 7" />
+          </svg>
+        </div>
+        <div class="header-title">Place de Stationnement</div>
+      </div>
+
+      <div class="tabs">
+        <div class="tab" onclick="setTab(this)">1er étage</div>
+        <div class="tab active" onclick="setTab(this)">2 ème étage</div>
+        <div class="tab" onclick="setTab(this)">3 ème étage</div>
+      </div>
+
+      <div class="scroll-area">
+        <!-- Section A 01 -->
+        <div class="section-block">
+          <div class="section-label">A 01</div>
+          <div class="parking-row">
+            <div class="spot" onclick="selectSpot(this)">
+              <img src="assets/img/15.svg" class="car-img" alt="" />
+            </div>
+            <div class="spot" onclick="selectSpot(this)">
+              <img src="assets/img/15.svg" class="car-img" alt="" />
+            </div>
+            <div class="spot empty-spot">
+              <span class="spot-number">03</span>
+            </div>
+            <div class="spot" onclick="selectSpot(this)">
+              <img src="assets/img/15.svg" class="car-img" alt="" />
+            </div>
+          </div>
+
+          <div class="lane">
+            <span class="lane-label">Entrée</span>
+            <div class="lane-arrows">
+              <svg width="22" height="16" viewBox="0 0 22 14" fill="none">
+                <path
+                  d="M2 7h14M12 3l4 4-4 4"
+                  stroke="#8ab800"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <svg width="22" height="16" viewBox="0 0 22 14" fill="none">
+                <path
+                  d="M2 7h14M12 3l4 4-4 4"
+                  stroke="#8ab800"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <svg width="22" height="16" viewBox="0 0 22 14" fill="none">
+                <path
+                  d="M2 7h14M12 3l4 4-4 4"
+                  stroke="#8ab800"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <span class="lane-label">Sortie</span>
+          </div>
+
+          <div class="parking-row">
+            <div class="spot" onclick="selectSpot(this)">
+              <img src="assets/img/15.svg" class="car-img" alt="" />
+            </div>
+            <div class="spot" onclick="selectSpot(this)">
+              <img src="assets/img/15.svg" class="car-img" alt="" />
+            </div>
+          
+            <div
+              class="spot selected"
+              id="spot-preselected"
+              onclick="selectSpot(this)"
+            >
+              <div class="selected-bar"></div>
+              <div class="check-badge">
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
+                  <path
+                    d="M2 6l3 3 5-5"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <img src="assets/img/15.svg" class="car-img orange" alt="" />
+              <div class="selected-label">
+                
+                Place Sélectionnée
+              </div>
+            </div>
+            <div class="spot" onclick="selectSpot(this)">
+              <img src="assets/img/15.svg" class="car-img" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Section B 01 -->
+        <div class="section-block">
+          <div class="section-label">B 01</div>
+          <div class="parking-row">
+            <div class="spot" onclick="selectSpot(this)">
+              <img src="assets/img/15.svg" class="car-img" alt="" />
+            </div>
+            <div class="spot" onclick="selectSpot(this)">
+              <img src="assets/img/15.svg" class="car-img" alt="" />
+            </div>
+            <div class="spot empty-spot">
+              <span class="spot-number">04</span>
+            </div>
+            <div class="spot" onclick="selectSpot(this)">
+              <img src="assets/img/15.svg" class="car-img" alt="" />
+            </div>
+          </div>
+
+         
+        <div style="height: 12px"></div>
+      </div>
+
+      
+      <div class="cta-wrap">
+        <button class="cta-btn" id="cta-btn">Continuer</button>
+      </div>
+    </div>
+<script src="assets/js/park.js"></script>
+  </body>
+</html>

@@ -1,0 +1,309 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --accent: #c8f135;
+  --dark: #1a1a1a;
+  --gray: #888;
+  --border: #e0e0e0;
+  --green: #6b8f00;
+  --green-light: #8ab800;
+}
+body {
+  font-family: "DM Sans", sans-serif;
+  background: #e8e7e2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.phone {
+  width: 390px;
+  min-height: 844px;
+  background: #fff;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.notch {
+  width: 120px;
+  height: 30px;
+  background: #000;
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+.statusbar {
+  height: 44px;
+  padding: 12px 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--dark);
+  position: relative;
+  z-index: 5;
+  flex-shrink: 0;
+}
+.statusbar-right {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.header {
+  padding: 12px 24px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+.back-btn {
+  cursor: pointer;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+}
+.header-title {
+  font-family: "Syne", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--dark);
+}
+.content {
+  flex: 1;
+  padding: 0 20px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.content::-webkit-scrollbar {
+  display: none;
+}
+.montant-box {
+  background: #f2f2ec;
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.montant-label {
+  font-family: "Syne", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--green);
+}
+.montant-value {
+  font-family: "Syne", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--dark);
+}
+.mobile-money-box {
+  border: 1.5px solid var(--accent);
+  border-radius: 14px;
+  padding: 14px 16px 16px;
+  margin-bottom: 16px;
+}
+.mobile-money-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  cursor: pointer;
+}
+.mobile-money-title {
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark);
+}
+.radio-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  flex-shrink: 0;
+  position: relative;
+}
+.radio-dot::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--green);
+}
+.radio-empty {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid #ccc;
+  flex-shrink: 0;
+}
+.phone-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.phone-prefix {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--dark);
+}
+.phone-dots {
+  font-size: 13px;
+  color: var(--gray);
+  letter-spacing: 2px;
+}
+.operator-icons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.op-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.pay-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.pay-option:hover {
+  border-color: var(--green-light);
+}
+.pay-option.active {
+  border-color: var(--accent);
+}
+.pay-option-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pay-logo {
+  width: 36px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.visa-logo {
+  font-family: "Syne", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: #1a1f71;
+  letter-spacing: -0.5px;
+}
+.mc-logo {
+  display: flex;
+}
+.mc-red {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #eb001b;
+}
+.mc-yellow {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #f79e1b;
+  margin-left: -8px;
+}
+.pay-name {
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark);
+}
+.add-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 14px;
+  background: #f5f5f5;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: all 0.2s;
+  border: 1.5px solid transparent;
+}
+.add-card:hover {
+  border-color: var(--green-light);
+  background: #f0ffe0;
+}
+.add-card-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #888;
+  font-weight: 300;
+}
+.add-card-label {
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #888;
+}
+.cta-wrap {
+  padding: 16px 20px 36px;
+  flex-shrink: 0;
+}
+.cta-btn {
+  width: 100%;
+  background: var(--accent);
+  color: var(--dark);
+  border: none;
+  border-radius: 18px;
+  padding: 18px;
+  font-family: "Syne", sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 24px rgba(200, 241, 53, 0.4);
+}
+.cta-btn:hover {
+  transform: scale(1.02) translateY(-2px);
+}
+.cta-btn:active {
+  transform: scale(0.98);
+}
+.img {
+  width: 30px;
+  height: 30px;
+}

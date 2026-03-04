@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <title>Durée du stationnement</title>
+    <link rel="stylesheet" href="assets/css/station.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="phone">
+      <div class="notch"></div>
+
+      <div class="statusbar">
+        <span>07:30 AM</span>
+        <div class="statusbar-right">
+          <svg
+            width="16"
+            height="12"
+            viewBox="0 0 16 12"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path d="M8 3C10.5 3 12.7 4.1 14.2 5.9" />
+            <path d="M1.8 5.9C3.3 4.1 5.5 3 8 3" />
+            <path d="M5.5 7.5C6.3 6.6 7.1 6 8 6C8.9 6 9.7 6.6 10.5 7.5" />
+            <circle cx="8" cy="10" r="1" fill="currentColor" />
+          </svg>
+          <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor">
+            <rect x="0" y="3" width="3" height="9" rx="1" />
+            <rect x="4.5" y="2" width="3" height="10" rx="1" />
+            <rect x="9" y="0" width="3" height="12" rx="1" />
+            <rect x="13.5" y="0" width="3" height="12" rx="1" opacity=".3" />
+          </svg>
+          <svg width="25" height="12" viewBox="0 0 25 12" fill="currentColor">
+            <rect
+              x="0"
+              y="1"
+              width="22"
+              height="10"
+              rx="3"
+              stroke="currentColor"
+              stroke-width="1"
+              fill="none"
+            />
+            <rect x="1.5" y="2.5" width="17" height="7" rx="2" />
+            <rect x="22.5" y="4" width="2" height="4" rx="1" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="header">
+        <div class="back-btn">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M19 12H5M12 5l-7 7 7 7" />
+          </svg>
+        </div>
+        <div class="header-title">Durée du stationnement</div>
+      </div>
+
+      <div class="subtitle">Entrez les détails de votre réservation</div>
+
+      <div class="form-section">
+        <div class="field-label">Date et heure d'arrivée</div>
+        <div class="input-row">
+          <div class="input-box" onclick="openCalendar('arrivee-date')">
+            <span class="input-val" id="arrivee-date-val">12/03/26</span>
+            <svg
+              class="input-icon"
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <path d="M16 2v4M8 2v4M3 10h18" />
+            </svg>
+          </div>
+          <div class="input-box" onclick="openTimePicker('arrivee-time')">
+            <span class="input-val" id="arrivee-time-val">10 : 00</span>
+            <svg
+              class="input-icon"
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 7v5l3 3" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="field-label">Date et heure de départ</div>
+        <div class="input-row">
+          <div class="input-box" onclick="openCalendar('depart-date')">
+            <span class="input-val" id="depart-date-val">12/03/26</span>
+            <svg
+              class="input-icon"
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <path d="M16 2v4M8 2v4M3 10h18" />
+            </svg>
+          </div>
+          <div class="input-box" onclick="openTimePicker('depart-time')">
+            <span class="input-val" id="depart-time-val">13 : 00</span>
+            <svg
+              class="input-icon"
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 7v5l3 3" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="customize-row" onclick="openOffers()">
+          <span class="customize-label">Personnaliser votre formule</span>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#8ab800"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="summary-wrap" id="summary-wrap">
+        <div class="summary-card">
+          <div class="summary-title">Réservation de parking</div>
+          <div class="summary-row">
+            <span class="summary-label" id="summary-duration-label"
+              >03 heures</span
+            >
+            <span class="summary-value"
+              >Place : <span class="badge">A 01</span></span
+            >
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Date</span>
+            <span class="summary-value">
+              <span class="badge" id="summary-date">12/03/2026</span>
+              de
+              <span class="badge" id="summary-hours">10 h - 13 h</span>
+            </span>
+          </div>
+          <div class="summary-total-row">
+            <span class="summary-total-label">Total :</span>
+            <span class="summary-total-amount" id="summary-total"
+              >2 500 Fcfa</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="cta-wrap">
+        <button class="cta-btn" onclick="handleConfirm()">Confirmer</button>
+      </div>
+
+      <div class="overlay" id="overlay-calendar">
+        <div class="sheet">
+          <div class="sheet-header">
+            <div class="sheet-title">Sélectionnez une date</div>
+            <button
+              class="close-btn"
+              onclick="closeOverlay('overlay-calendar')"
+            >
+              ✕
+            </button>
+          </div>
+          <div class="cal-nav">
+            <button class="cal-arrow" onclick="changeMonth(-1)">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+              >
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            <div class="cal-month" id="cal-month-label">Mars 2026</div>
+            <button class="cal-arrow" onclick="changeMonth(1)">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+              >
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </div>
+          <div class="cal-grid" id="cal-grid"></div>
+          <div style="margin-top: 20px">
+            <button class="cta-btn" onclick="confirmDate()">Confirmer</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlay" id="overlay-time">
+        <div class="sheet time-sheet">
+          <div class="sheet-header">
+            <div class="sheet-title" id="time-sheet-title">Heure d'arrivée</div>
+            <button class="close-btn" onclick="closeOverlay('overlay-time')">
+              ✕
+            </button>
+          </div>
+          <div class="time-pickers">
+            <div class="time-scroll" id="hour-scroll"></div>
+            <div class="time-sep">:</div>
+            <div class="time-scroll" id="min-scroll"></div>
+          </div>
+          <button class="cta-btn" onclick="confirmTime()">Confirmer</button>
+        </div>
+      </div>
+
+      <div class="overlay" id="overlay-offers">
+        <div class="sheet">
+          <div class="sheet-header">
+            <div class="sheet-title">Sélectionnez une offre</div>
+            <button class="close-btn" onclick="closeOverlay('overlay-offers')">
+              ✕
+            </button>
+          </div>
+          <div class="offers-label">Offre disponible</div>
+
+          <div class="offer-card" onclick="selectOffer(this, 500000)">
+            <div
+              style="
+                width: 52px;
+                height: 52px;
+                border-radius: 12px;
+                background: linear-gradient(135deg, #e8e8e8, #fff, #ddd);
+                flex-shrink: 0;
+              "
+            ></div>
+            <div class="offer-info">
+              <div class="offer-name">Pack DIAMANT</div>
+              <div class="offer-period">Trimestriel</div>
+              <span class="offer-price">500 000</span>
+            </div>
+            <button class="offer-add">+</button>
+          </div>
+
+          <div class="offer-card" onclick="selectOffer(this, 300000)">
+            <div
+              style="
+                width: 52px;
+                height: 52px;
+                border-radius: 12px;
+                background: linear-gradient(135deg, #d4a017, #f0c040, #b8860b);
+                flex-shrink: 0;
+              "
+            ></div>
+            <div class="offer-info">
+              <div class="offer-name">Pack OR</div>
+              <div class="offer-period">Mensuel</div>
+              <span class="offer-price">300 000</span>
+            </div>
+            <button class="offer-add">+</button>
+          </div>
+
+          <div class="offer-card" onclick="selectOffer(this, 150000)">
+            <div
+              style="
+                width: 52px;
+                height: 52px;
+                border-radius: 12px;
+                background: linear-gradient(135deg, #c0c0c0, #f0f0f0, #a0a0a0);
+                flex-shrink: 0;
+              "
+            ></div>
+            <div class="offer-info">
+              <div class="offer-name">Pack ARGENT</div>
+              <div class="offer-period">Journalier</div>
+              <span class="offer-price">150 000</span>
+            </div>
+            <button class="offer-add">+</button>
+          </div>
+
+          <div class="offer-card" onclick="selectOffer(this, 50000)">
+            <div
+              style="
+                width: 52px;
+                height: 52px;
+                border-radius: 12px;
+                background: linear-gradient(135deg, #cd7f32, #e8a060, #a0522d);
+                flex-shrink: 0;
+              "
+            ></div>
+            <div class="offer-info">
+              <div class="offer-name">Pack BRONZE</div>
+              <div class="offer-period">Horaire</div>
+              <span class="offer-price">50 000</span>
+            </div>
+            <button class="offer-add">+</button>
+          </div>
+
+          <div class="promo-label">Utiliser un code promo :</div>
+          <div style="margin-top: 14px">
+            <button class="cta-btn" onclick="confirmOffer()">Confirmer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/station.js"></script>
+  </body>
+</html>

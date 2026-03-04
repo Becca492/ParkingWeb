@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <link rel="stylesheet" href="assets/css/place.css" />
+    <title>ParkEasy</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="phone">
+      <div class="statusbar">
+        <span>9:41</span>
+        <div class="statusbar-icons">
+          <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor">
+            <rect x="0" y="3" width="3" height="9" rx="1" />
+            <rect x="4.5" y="2" width="3" height="10" rx="1" />
+            <rect x="9" y="0" width="3" height="12" rx="1" />
+            <rect x="13.5" y="0" width="3" height="12" rx="1" opacity=".3" />
+          </svg>
+          <svg
+            width="16"
+            height="12"
+            viewBox="0 0 16 12"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path d="M8 3C10.5 3 12.7 4.1 14.2 5.9" />
+            <path d="M1.8 5.9C3.3 4.1 5.5 3 8 3" />
+            <path d="M5.5 7.5C6.3 6.6 7.1 6 8 6C8.9 6 9.7 6.6 10.5 7.5" />
+            <circle cx="8" cy="10" r="1" fill="currentColor" />
+          </svg>
+          <svg width="25" height="12" viewBox="0 0 25 12" fill="currentColor">
+            <rect
+              x="0"
+              y="1"
+              width="22"
+              height="10"
+              rx="3"
+              stroke="currentColor"
+              stroke-width="1"
+              fill="none"
+            />
+            <rect x="1.5" y="2.5" width="17" height="7" rx="2" />
+            <rect x="22.5" y="4" width="2" height="4" rx="1" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="header">
+        <div>
+          <div class="greeting">Bienvenue,</div>
+          <div class="username">
+            Karen <span style="font-style: italic">EKRA</span>
+          </div>
+        </div>
+        <button class="bell-btn">
+          <svg
+            width="18"
+            height="20"
+            viewBox="0 0 18 20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+          >
+            <path d="M9 1a6 6 0 0 1 6 6v3l2 3H1l2-3V7a6 6 0 0 1 6-6Z" />
+            <path d="M7 17a2 2 0 0 0 4 0" />
+            <circle cx="13" cy="3" r="3" fill="#ff4444" stroke="none" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="hero">
+        <img
+          src="https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=800&q=80"
+          alt="Parking"
+        />
+        <div class="hero-overlay"></div>
+        <div class="hero-badge">
+          <span>25</span> Places de parking disponibles
+        </div>
+      </div>
+
+      <div class="section-title">Mon type de véhicule</div>
+
+      <div class="vehicle-grid">
+        <div class="vehicle-card" onclick="selectVehicle(this)">
+          <img class="vehicle-img" src="assets/img/MOTO.svg" alt="Moto" />
+          <div class="vehicle-label">Moto</div>
+        </div>
+        <div class="vehicle-card active" onclick="selectVehicle(this)">
+          <img
+            class="vehicle-img"
+            src="assets/img/VOITURE.svg"
+            alt="Véhicule"
+          />
+          <div class="vehicle-label">Véhicule</div>
+        </div>
+        <div class="vehicle-card" onclick="selectVehicle(this)">
+          <img class="vehicle-img" src="assets/img/CAMION.svg" alt="Engins" />
+          <div class="vehicle-label">Engins</div>
+        </div>
+      </div>
+
+      <div class="cta-wrap">
+        <button class="cta-btn">Trouver une place →</button>
+      </div>
+
+      <div class="bottom-nav">
+        <div class="nav-item active">
+          <img src="assets/img/6.svg" alt="" class="image" />
+        </div>
+        <div class="nav-item">
+          <img src="assets/img/8.svg" alt="" class="image" />
+        </div>
+        <div class="nav-item">
+          <img src="assets/img/9.svg" alt="" class="image" />
+        </div>
+        <div class="nav-item">
+          <img src="assets/img/11.svg" alt="" class="image" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
